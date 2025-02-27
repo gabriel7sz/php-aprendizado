@@ -1,0 +1,35 @@
+    Não é segredo que existe um lado cliente onde é executado as aplicações. Essas aplicações fazem
+requisições atravéz de um meio físico que é a internet. Porém esse meio físico pode ser representado
+como um único computador que atua dos dois lados de forma local. Um exemplo disso, são os ambientes
+de desenvolvimento, onde a maior parte dos casos é uma única máquina fazendo requisições através da
+web e ao mesmo tempo, respondendo as requisições feitas por si mesmo.
+    Esse conceito de ambientes de desenvolvimento, é um conceito que 'emula' a dinâmica que é 
+utilizada no meio físico, que é a internet, e que é o protocolo HTTP.  
+
+    Para que esse protocolo seja respeitado e haja uma comunicação, é necessário que haja um request
+e que na outra ponta exista um servidor HTTP, neste caso o APACHE, capaz de receber e tratá-las.
+
+        Páginas estáticas
+
+    Quando fala-se páginas estáticas, acontece que o cliente faz uma requisição de uma página HTML,
+cujo código já está definido. Ou seja, devolvendo um arquivo HTML para quem fez a requisição.
+
+        Páginas dinâmicas
+
+    No entanto, quando fala-se de páginas dinâmicas, a requisição é feita para um arquivo .php ou
+.asp por exemplo. Onde que no lado do servidor haverá uma linguagem de programação que atuará sobre
+essa requisição que está sendo feita.
+
+        Mas qual é o papel do servidor?
+
+    O servidor receberá uma requisição e se por exemplo, se a requisição seja de um arquivo com a 
+extensão .php , o servidor submete essa requisição para o interpretador php, indicando qual é o 
+script que deve ser interpretado.
+    Esse script por sua vez é interpretado pelo php em tempo de requisição. Essa interpretação 
+produz uma página html, ou seja, toda a codificação contida dentro de blocos php é interpretada, e 
+o resultado dessa interpretação é anexado ao documento html, que por sua vez é entregue ao servidor 
+em forma de resposta (response).
+    E por fim esse response, é encaminhado para quem fez a requisição do lado cliente.
+    Seria por isso que no browser cliente não é possível ver qualquer codificação php. Pois essa
+codificação entra em ação do lado do servidor, formando as páginas response html.
+    
