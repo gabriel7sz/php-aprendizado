@@ -1,0 +1,87 @@
+    O PHP é de uso livre. No que diz respeito aos campos de 
+atuação do PHP:
+
+ - Pode ser usado diretamente na linha de comando: Para 
+automaçao de tarefas.
+
+ - Pode ser usado para criação de aplicações desktop.
+
+ - E para seu ponto forte, pode ser usado para aplicações 
+servers sides.
+
+**************
+
+O que isto significa?
+
+ - Aplicações em linhas e comando: são scripts que podem ser
+executados diretamente pelo shell dos SOs, como o CMD do 
+Windows, pelo Bash no linux ou pelo terminal do SX do MacOs.
+Pode-se ser utilizado para automatizar algumas tarefas do 
+sistema operacional ou o próprio servidor Web, como por 
+exemplo:  Uma rotina de backup ou remoção de arquivos, 
+Uma rotina de importação de arquivos via FTP de servidores
+remotos, Um script de levantamento de banco de dados. 
+Enfim, tudo isso pode ser feito através da criação de scripts
+que executarem processos locais através da linha de comando 
+do sistema operacional.
+
+ - Aplicações Desktop: ou seja, que está localmente no 
+computador do cliente, o PHP também possui uma iniciativa
+chamada PHP - GTK. Aplicações desktop como o Skype ou o 
+pacote Office da Microsoft ou até o próprio browser ou o 
+Xampp, enfim, todas as aplicações podem ser interpretadas
+como client side, já que estão locais, no lado do cliente.
+Mesmo sendo uma forma primitiva no PHP e deixando muito a 
+desejar, vale a pena testar.
+
+ - Aplicações Servers Side: Agora sim, quando fala-se de 
+aplicações servers side, falamos do ponto forte do PHP.
+Neste ponto o PHP é considerado uma linguagem de programação
+de peso sendo atualmente uma das linguagens de programação
+mais utilizadas para o desenvolvimento de sites ou sistemas
+web dinâmicos.
+
+**************
+
+O PHP é uma linguagem de programação interpretada e não 
+compilada. Isso significa que os scripts da aplicação não
+serão sumetidos para uma compilação prévia, a fim de gerar 
+um executável. Os scripts serão interpretados em tempo de 
+requisição das páginas.
+
+**************
+
+O PHP é compátivel com as maiorias dos SOs.
+
+**************
+
+O PHP foi pensado inicialmente para suportar o paradigma
+estrutural, porém ao longo do tempo o PHP incorporou o 
+suporte ao paradigma de orientação a objetos e atualmente,
+aceita muito bem a utilização dos dois paradigmas. Inclusive
+a combinação dos dois.
+
+**************
+
+O PHP tem um suporte muito grande a sistemas e gerenciadores
+de banco de dados. Sem dúvida essa é uma característica
+significativa na popularidade da linguagem.
+
+**************
+
+Outra característica é o seu vasto suporte a protocolos de 
+comunicação disponíveis na internet.
+Além do tradicional HTTP, o PHP suporta outros protocolos
+de comunicação, como o LDAP (Lightweight Directory Access 
+Protocol), que é o protocolo de comunicação com o Active 
+Directory, do Windows.
+Suporta também o IMAP o SMTP e POP3, que são protocolos de
+envio e recebimento de emails.
+
+**************
+
+Essas são algumas das principais características do PHP e 
+é justamente o suporte a tantos recursos diferentes, que fez 
+dessa linguagem de programação o que ela é hoje, uma das 
+principais do mercado quando o assunto é desenvolvimento de
+aplicações web.
