@@ -32,4 +32,4 @@ em forma de resposta (response).
     E por fim esse response, é encaminhado para quem fez a requisição do lado cliente.
     Seria por isso que no browser cliente não é possível ver qualquer codificação php. Pois essa
 codificação entra em ação do lado do servidor, formando as páginas response html.
-    
+        
