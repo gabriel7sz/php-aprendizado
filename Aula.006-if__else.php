@@ -24,5 +24,26 @@
         serem testadas, consecutivamente.
     -->
 
+        <?php 
+
+            // ==
+            // ===
+            // !==
+            // != ou <>
+            // <
+            // >
+            // <=
+            // >=
+
+            if('x' <> 'y') {
+                echo 'Verdadeiro';
+
+            } else {
+                echo 'Falso';           
+
+            }
+
+        ?>  
+
 </body>
 </html>
