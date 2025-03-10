@@ -15,17 +15,26 @@
     
     <?php 
 
-        // Imagine uma regra de negócio de um Ecommerce que dê desconto no frete, em compras acima de 100.00 reais.
+        // Imagine uma regra de negócio de um Ecommerce que dê desconto no frete, em compras acima de 400.00 reais.
 
-        $usuario_possui_cartao_loja = true;
-        $valor_compra = 99;
+        $usuario_possui_cartao_loja = false;
+        $valor_compra = 725;
         $valor_frete = 50;
-        $recebeu_desconto_frete = false;
+        $recebeu_desconto_frete = true;
 
-        if ($usuario_possui_cartao_loja == true && $valor_compra >= 100) {
+        if ($usuario_possui_cartao_loja == true && $valor_compra >= 400) {
             $valor_frete = 0;
-            $recebeu_desconto_frete = true;
+
+        } elseif ($usuario_possui_cartao_loja == true && $valor_compra >= 300){
+            $valor_frete = 10;
+
+        } elseif ($usuario_possui_cartao_loja == true && $valor_compra >= 100) {
+            $valor_frete = 25;
+
+        } else {
+            $recebeu_desconto_frete = false;
         }
+
 
     ?>
 
@@ -64,7 +73,7 @@
     <br>
         <?php 
             if ($valor_frete == 0) {
-                echo 'O cliente não precisou pagar frete pois a compra foi acima de R$ 100,00 reais.';
+                echo 'O cliente não precisou pagar frete pois a compra foi acima de R$ 400,00 reais.';
             } else {
                 echo 'O frete ficou ' . $valor_frete . ',00.';
             }
