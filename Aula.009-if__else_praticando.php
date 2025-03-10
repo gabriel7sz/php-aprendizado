@@ -17,8 +17,8 @@
 
         // Imagine uma regra de negócio de um Ecommerce que dê desconto no frete, em compras acima de 400.00 reais.
 
-        $usuario_possui_cartao_loja = false;
-        $valor_compra = 725;
+        $usuario_possui_cartao_loja = true;
+        $valor_compra = 400;
         $valor_frete = 50;
         $recebeu_desconto_frete = true;
 
@@ -40,44 +40,22 @@
 
     <h1>Detalhes do pedido</h1>
     <p><b>Possui cartão da loja?</b>
-    <br>
-        <?php 
-            if($usuario_possui_cartao_loja == true) {
-                echo 'SIM';
-
-            } else {
-                echo 'Não';
-
-            }
-        ?>
+        <br>
+        <!-- Com operador ternário -->
+        <?=$usuario_possui_cartao_loja == true ?  'SIM' : 'NÃO'; ?>
+        
     </p>
     
     <p><b>Valor compra:</b><br> R$<?= $valor_compra?>,00.</p>
 
     <p><b>O cliente recebeu desconto no frete?</b>
-    <br>
-        <?php 
-            if($recebeu_desconto_frete == true) {
-                echo 'SIM'; 
-            } else {
-                echo 'NÃO';
-            }
-            echo '<br>';
-            if ($usuario_possui_cartao_loja == false) {
-                echo 'O cliente não pode ganhar o desconto no frete, pois não possui o cartão da loja.';
-            }
-        ?>
+        <br>
+        <?= $recebeu_desconto_frete == true ? 'SIM' : 'NÃO'; ?>
     </p>
 
     <p><b>Qual foi o valor total no frete?</b>
-    <br>
-        <?php 
-            if ($valor_frete == 0) {
-                echo 'O cliente não precisou pagar frete pois a compra foi acima de R$ 400,00 reais.';
-            } else {
-                echo 'O frete ficou ' . $valor_frete . ',00.';
-            }
-        ?>
+        <br>
+        <?= $valor_frete == 0 ? 'O cliente não precisou pagar frete pois a compra foi acima de R$ 400,00 reais.' : 'O frete ficou ' . $valor_frete . ',00.' ?>
     </p>
 
 </body>
