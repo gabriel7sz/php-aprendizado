@@ -14,6 +14,17 @@
         // ou $x += 5;
 
         echo $x;
+
+        /*
+            Lembrando que pode-se ser feito a atribuição mais enxuta com todos os tipos de operações aritméticas.
+            Como:
+
+            $x -= $x;
+            $x *= $x;
+            $x /= $x;
+            $x %= $x;
+            
+        */ 
     ?>
 
 </body>
