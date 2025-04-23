@@ -48,7 +48,7 @@
         }
     }
 
-    echo calcularIRPF(1903.98);
+    echo calcularIRPF(1903.99);
 
 ?>
     
