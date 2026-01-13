@@ -76,14 +76,38 @@
         }
 
         #div1, #div2 { 
-            background-color: #777;
-            background: #777;  
-            margin-left: 10px
+            background-color: #999;
+            background: #999;  
+            margin-left: 10px;
+            border-radius: 8px;
         }
 
         #Dica {
-            background-color: #777;
-            padding: 20px
+            background-color: #999;
+            padding: 20px;  
+            border-radius: 8px;
+
+        }
+
+        #trechoPHP {
+            margin-top: 20px;   
+        }
+
+        #tagPHP {
+            background-color: "#777";
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+        .exemplo {
+            width: 400px;
+            display: flex; 
+            justify-content: center; 
+            background-color: #999; 
+            padding: 20px; 
+            margin-top: 20px;
+            margin-left: 30px;
+            border-radius: 7px;
         }
 
     </style>
@@ -118,13 +142,13 @@
                             $variavel_1 = 'Banana'
                         </li>
                         <li>
-                            $variavel_1 = 'Maça'
+                            $variavel_2 = 'Maça'
                         </li>
                         <li>
-                            $variavel_1 = 'Laranja'
+                            $variavel_3 = 'Laranja'
                         </li>
                         <li>
-                            $variavel_1 = 'Uva'
+                            $variavel_4 = 'Uva'
                         </li>
                     </ul>
                 </div>
@@ -154,7 +178,8 @@
             <div>
                 <p>
                     Pode-se passar como parâmetro para o construtor do objeto Array, os índices desejados,
-                    assim eles seguirão uma sequência. <br>Por exemplo: <b>$lista_frutas = array('Banana', 'Maçã', 'Morango', 'Uva');</b> <br><br>
+                    assim eles seguirão uma sequência. <br>Por exemplo: <b>$lista_frutas = array('Banana', 'Maçã', 'Morango', 'Uva');</b>
+                    ou,<br> <b>$listafrutas = ['Banana', 'Maça', 'Morango', 'Uva'];</b> <br><br>
                 </p>
             </div>
             <div id="Dica">
@@ -163,24 +188,130 @@
                     Para debugar no PHP, pode-se usar duas funções.<br> A função:
                     var_dump(); Passando por parâmetro o que deve ser debugado. <br>Por exemplo: <b>var_dump($lista_frutas);</b><br>
                     <br>Ou também a função: print_r(); Que também espera por parâmetro o array para teste.<br>
-                    Por exemplo; <b>print_r($lista_frutas);</b><br>
+                    Por exemplo; <b>print_r($lista_frutas);</b><br><br>
                     Lembrando que estas funçoes nativas servem apenas como debug e elas imprimem no documento o retorno da busca.
                 </p>
             </div>
 
-            <div>
+            <div id="trechoPHP">    
                 <h4>Trecho PHP</h4>
                 <?php 
                     $lista_frutas = array('Banana', 'Maçã', 'Morango', 'Uva');
                 ?>
                 <h5>Debug com tag var_dump();</h5>
                 <?php var_dump($lista_frutas);?>
+                <br><br>
+                <span>
+                    Perceba que a função var_dump() retorna o array com algumas informações adicionas, como o tipo de
+                    variável que está armazenada em um índice.
+                </span>
+                <br><br>
                 <h5>Debug com tag print_r();</h5>
                 <?php print_r($lista_frutas);?>
+                <br><br>
+                <span>
+                    Enquanto a função print_r() é mais simples e direta ao ponto.
+                </span>
             </div>
 
+            <div id="tagPHP">
+                <p>
+                    Lembrando que existe uma tag dentro do PHP para formatar a exibição dos arrays. Ela se chama:
+                    < pre >. Lembrando que é preciso passar esta funcionalidade com o comando echo, e não podendo 
+                    esquecer de fechar as chaves. < pre > < /pre >. Veja esta funcionalidade aplicada ao debugador var_dump()
+                    e print_r(), por exempo:     
+                </p>
+                
+                <div style="display:flex;">
+
+                        <div class="exemplo">
+                            <?php
+                                echo "<br />";
+                                echo "<pre>";
+                                var_dump($lista_frutas);
+                                echo "</pre>";
+                            ?>
+                        </div>
+
+                        <div class="exemplo">
+                            <?php 
+                                echo "<pre>";
+                                print_r($lista_frutas);
+                                echo "</pre>";
+                            ?>
+                        </div>
+                </div>    
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h4>Impressão de algum índice do Array</h4>
+                <p>
+                    Para imprimir algum índice do array basta usar a função <b>echo</b> do PHP dizendo o índice do array.
+                    Por exemplo: echo $lista_frutas[3]:
+                    <?php 
+                        echo $lista_frutas[3];
+                    ?>
+                </p>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h1>Array's Associativos</h1>
+                <p>
+                    Seria muito próximo ao array sequencial, com uma diferença em que seus índices são explícitos, atribuídos na 
+                    declaração do array sequencial. Seguindo este padrão:
+                </p>
+                <p>
+                    <b>$lista_Nomes = ['A' => 'Gabriel', 'B' => 'Miguel', 'C' => 'Gustavo', 'D' => 'Rafael'];</b>
+                </p>
+                <p>
+                    A variável $lista_Nomes recebe um array. Atríbui-se o índice antes do conteúdo do array que segue imediatamente
+                    após o operador ' => ' . Assim o índice está explícitamente atribuío ao conteúdo do array, já em sua declaração.
+                </p>
+                <p>
+                    Trecho PHP:<br>
+                    $lista_Nomes = array('a' => 'Gabriel', 'b' => 'Rafael', 'c' => 'Gustavo', 'd' => 'Miguel');<br>
+                    echo '< pre>';<br>
+                    var_dump($lista_Nomes);<br>
+                    echo '< /pre>';<br>
+
+                    <div style="background-color: #999; width: 300px; padding: 10px; margin: 0 auto; border-radius: 7px;">
+                        <?php
+                            $lista_Nomes = array(
+                                'a' => 'Gabriel',
+                                'b' => 'Rafael',
+                                'c' => 'Gustavo',
+                                'd' => 'Miguel');
+
+                                echo '<pre>';
+                                var_dump($lista_Nomes);
+                                echo '</pre>';
+                        ?>
+                    </div>
+                </p>
+                <p>
+                    Para adicionar um novo valor ao array, basta novamente declarar um novo índice explícito. Seguindo o exemplo:
+                </p>
+                <p>
+                    Trecho PHP: <br>
+                    $lista_Nomes['e'] = 'Kamily';<br>
+                    echo '< pre>'<br>
+                    var_dump($lista_Nomes);<br>
+                    echo '< /pre>'<br>
+                </p>
+
+                <div style="background-color: #999; width: 300px; padding: 10px; margin: 0 auto; border-radius: 7px; margin-top : 20px;">
+                    <?php 
+                        $lista_Nomes['e'] = 'Kamily';
+                        echo '<pre>';
+                        var_dump($lista_Nomes);
+                        echo '</pre>';
+                    ?>
+                </div>
+
+            </div>
+            
         </div> <!-- fim content-container -->
     </div>  <!-- fim container -->
 
 </body>
-</html>
+</html>         
