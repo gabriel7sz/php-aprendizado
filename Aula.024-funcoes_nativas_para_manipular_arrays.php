@@ -207,10 +207,36 @@
         <?php 
             $string = '17/09/2003';
             $arrayExplode = explode('/', $string);
+            echo $string;
             echo '<pre>';
                 print_r($arrayExplode);
             echo '<pre>';
         ?>
     </div>
+
+    <h1>Função implode()</h1>
+    <p>
+        A função implode() junta os elementos de um array em uma string.
+    </p>
+    <p>
+        Também utiliza-se de um delimitador para a união. Esse delimitador ficará <b>ENTRE</b> os elementos
+        que serão unidos.
+    </p>
+    <p>
+        Então por parâmetro, espera-se primeiro receber o delimitador ,e segundo, o array que será modificado.
+    </p>
+    
+    <div>
+        <?php 
+            $array10 = ['G', 'a', 'b', 'r', 'i', 'e', 'l'];
+            echo '<pre>';
+                print_r($array10);
+            echo '<pre>';
+
+            $retornoImplode = implode(' ', $array10);
+            echo $retornoImplode;
+        ?>
+    </div>
+
 </body>
 </html>
