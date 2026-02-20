@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,6 +64,17 @@
             font-weight: 600;
             font-size: larger;
             padding: 10px;
+        }
+
+        .div__code__php {
+            margin: 20px auto; 
+            background: #FFF; 
+            border-radius: 8px; 
+            padding: 10px;
+        }
+
+        .block__code {
+            width: 500px;
         }
 
     </style>
@@ -162,7 +173,7 @@
             </p>
             
             <div style="display: flex;">
-                <div style="margin: 20px auto; width: 200px; background: #FFF; border-radius: 8px; padding: 10px;">
+                <div class="div__code__php" style="width: 200px;">
                         <code>
                             while(condicao) {
                             }
@@ -175,7 +186,7 @@
                 se repetir até uma variável chamada $num1 ser menor que o número 10. Teremos o seguinte código:
             </p>
             
-            <div style="margin: 20px auto; width: 500px; background: #FFF; border-radius: 8px; padding: 10px;">
+            <div class="div__code__php block__code">
                 <code>
                     $num1 = 1;<br>
                     echo "-- Inicio do Loop --";<br>
@@ -192,7 +203,7 @@
                 Segue a execução do código PHP:
            </p>
 
-           <div style="margin: 20px auto; width: 500px; background: #FFF; border-radius: 8px; padding: 10px;">
+           <div class="div__code__php block__code">
                 <?php 
                     $num1 = 1;
                     echo "-- Inicio Loop -- <br />";
@@ -206,13 +217,13 @@
                 
            <p>
                 Lembrando que a lógica para a parada de execução do loop, não precisa ser simplismente um
-                acréscimo de uma variável. Existe o comando Break, que parará a execução do comando, não 
+                acréscimo de uma variável. Existe o comando <b style="color: red; cursor: pointer;">break</b>, que parará a execução do comando, não 
                 importando aonde o comando break está no escopo do código.
            </p>
             <p>
                 Por exemplo:
             </p>
-            <div style="margin: 20px auto; width: 500px; background: #FFF; border-radius: 8px; padding: 10px;">
+            <div class="div__code__php block__code">
                 <code>
                     $num1 = 1;
                     <br>
@@ -229,7 +240,7 @@
                 Segue a execução do código PHP:
             </p>
 
-            <div style="margin: 20px auto; width: 500px; background: #FFF; border-radius: 8px; padding: 10px;">
+            <div class="div__code__php block__code">
                 <?php 
                     $num1 = 0;
                     echo '-- Inicio Loop --<br />';
@@ -243,9 +254,55 @@
                     } echo '-- Fim Loop --<br />';
                 ?>
             </div>
-
-
-
+            <div>
+                <p>
+                    Também existe o comando <b style="color: red; cursor: pointer;">continue</b>, que diferente do comando
+                    <b style="color: red; cursor: pointer;">break</b>, o comando 
+                    <b style="color: red; cursor: pointer;">continue</b> não interrompe a execução do laço de repetição 
+                    como um todo, o que acontece é que ele pula para o próximo bloco de comando do laço de repetição.
+                </p>
+            </div>
+            <div class="div__code__php block__code">
+                    <code>
+                        $num10 = 0;<br>
+                        echo '-- Inicio Loop --';<br>
+                        while($num10 > 10) {<br>
+                        &nbsp;$num10++;<br>
+                        &nbsp;if($num10 == 2 || $num10 == 6) {<br>
+                        &nbsp;&nbsp;continue;<br>
+                        &nbsp;}<br>
+                        &nbsp;echo $num10;<br>
+                        } echo '-- Fim loop --' <br>
+                    </code>
+            </div>
+            <p>
+                Segue execução em PHP:
+            </p>
+            <div class="div__code__php block__code">
+                <?php 
+                    $num10 = 0;
+                    echo "--Inicio Loop -- </br>";
+                    while($num10 < 10) {
+                        $num10++;
+                        if($num10 == 2 || $num10 == 6){
+                            continue;
+                        }
+                        echo "$num10  </br>";
+                    } echo '-- Fim Loop --'
+                ?>
+            </div>
+            <p>
+                Bom, repare que neste código acima, houve uma instrução <b style="color: red; cursor: pointer;">continue</b>
+                e nela foi especificado se a variável $num10 for igual aos números 2 e 6, pulasse para o próximo bloco de códigos,
+                que neste caso seria a impressão da váriável $num10. Por isso que na saída não foi impresso no navegador, quando
+                a variável estava com os incrementos 2 e 6. 
+            </p>
+            <br>
+            <p>
+                Cuidado ao utilizar o comando <b style="color: red; cursor: pointer;">continue</b>. Verifique antes de executar
+                que mesmo após a utilização do comando <b style="color: red; cursor: pointer;">continue</b>, o critério de parada
+                da lógica do laço de repetição está preservado, ou será considerado novamente. Pois se não, ocorrerá um loop infinito.
+            </p>
         
         </div>
 
