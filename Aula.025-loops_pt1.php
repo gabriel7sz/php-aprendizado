@@ -68,13 +68,19 @@
 
         .div__code__php {
             margin: 20px auto; 
-            background: #FFF; 
+            background:#292a2d; 
+            color: white;
             border-radius: 8px; 
             padding: 10px;
         }
 
         .block__code {
             width: 500px;
+        }
+
+        .emphasis {
+            color: green;
+            cursor: pointer;
         }
 
     </style>
@@ -115,8 +121,7 @@
                 de executar um comando, ou bloco de códigos, até atender alguma determinada condição.
             </p>
             <p>
-                Ou seja, executar alguma coisa, até que não haja mais a necessidade de repetição daquela
-                lógica.
+                Ou seja, executar alguma coisa, até que não haja mais a necessidade de repetição.
             </p>
         </div>
         <div class="title" style="margin-top: 20px;">
@@ -150,7 +155,7 @@
                 Ao não fazer isso, acontece o que tem nome de LOOP INFINITO, pois o loop executará infinitamente,
                 podendo ser até prejudicial ao processamento da máquina que o está executando, portanto, atenção se
                 a lógica do loop que está sendo trabalhado, for muito complexa, pois isso pode até executar em um
-                esotamento de memória ram, travando assim a aplicação.
+                esgotamento de memória ram, travando assim a aplicação.
             </p>
             <br>
             <p>
@@ -217,7 +222,7 @@
                 
            <p>
                 Lembrando que a lógica para a parada de execução do loop, não precisa ser simplismente um
-                acréscimo de uma variável. Existe o comando <b style="color: red; cursor: pointer;">break</b>, que parará a execução do comando, não 
+                acréscimo de uma variável. Existe o comando <b class="emphasis">break</b>, que parará a execução do comando, não 
                 importando aonde o comando break está no escopo do código.
            </p>
             <p>
@@ -256,9 +261,9 @@
             </div>
             <div>
                 <p>
-                    Também existe o comando <b style="color: red; cursor: pointer;">continue</b>, que diferente do comando
-                    <b style="color: red; cursor: pointer;">break</b>, o comando 
-                    <b style="color: red; cursor: pointer;">continue</b> não interrompe a execução do laço de repetição 
+                    Também existe o comando <b class="emphasis">continue</b>, que diferente do comando
+                    <b class="emphasis">break</b>, o comando 
+                    <b class="emphasis">continue</b> não interrompe a execução do laço de repetição 
                     como um todo, o que acontece é que ele pula para o próximo bloco de comando do laço de repetição.
                 </p>
             </div>
@@ -292,20 +297,103 @@
                 ?>
             </div>
             <p>
-                Bom, repare que neste código acima, houve uma instrução <b style="color: red; cursor: pointer;">continue</b>
+                Bom, repare que neste código acima, houve uma instrução <b class="emphasis">continue</b>
                 e nela foi especificado se a variável $num10 for igual aos números 2 e 6, pulasse para o próximo bloco de códigos,
                 que neste caso seria a impressão da váriável $num10. Por isso que na saída não foi impresso no navegador, quando
                 a variável estava com os incrementos 2 e 6. 
             </p>
             <br>
             <p>
-                Cuidado ao utilizar o comando <b style="color: red; cursor: pointer;">continue</b>. Verifique antes de executar
-                que mesmo após a utilização do comando <b style="color: red; cursor: pointer;">continue</b>, o critério de parada
+                Cuidado ao utilizar o comando <b class="emphasis">continue</b>. Verifique antes de executar
+                que mesmo após a utilização do comando <b class="emphasis">continue</b>, o critério de parada
                 da lógica do laço de repetição está preservado, ou será considerado novamente. Pois se não, ocorrerá um loop infinito.
             </p>
-        
         </div>
 
+        <div class="title">
+            <h1>Como podemos utilizar o laço Do While</h1>
+        </div>
+        <div class="container__content">
+            <p>
+                Começaremos pela sintaxe do comando Do While:
+            </p>
+            <div class="div__code__php" style="width: 200px;">
+                <code>
+                      do {<br>(Bloco de código)<br>
+                    } while(condição);<br>
+                </code>
+            </div>
+            <p>
+                Começando pela palavra reservada <b class="emphasis">do</b> em seguida de abre e fecha chaves {}. 
+                Dentro das chaves sempre irão os códigos que queremos repetir. <br>
+                Por conseguinte a palavra reservada <b class="emphasis">While</b>, seguida de abre e fecha parênteses ().
+                Dentro dos parênteses sempre irá a condição de parada do laço de repetição.
+            </p>
+        </div>
+        <div class="title">
+            <h3>Quais as diferenças entre While e Do While?</h3>
+        </div>
+        <div class="container__content">
+            <p>
+                A diferença entre esses dois comandos é bastante sutil. Se nos lembrarmos da sintaxe do comando <b class="emphasis">while</b>,
+                veremos que a primeira interação é checar a condição primeiro, e se estiver de acordo, executar o bloco de códigos. <br>
+                Diferentemente do comando <b class="emphasis">do while</b>, que garante que o bloco de códigos executará pelo menos
+                uma vez, visto que em sua sintaxe, a primeira interação são os blocos de códigos, para somente no final, fazer a comparação
+                da condição necessária. <br>
+                Segue um exemplo para melhor visualização:
+            </p>
+            <div class="div__code__php" style="width: 700px; height: 130px;">
+                <div style="float: left;">
+                    <b class="emphasis">do while</b> <br>
+                    <code>
+                        $x = 10; <br>
+                        do { <br>
+                            echo "Entrou no comando DO"; <br>
+                        } while($x < 9); <br>
+                    </code>
+                </div>
+                <div style="float: right;">
+                    <b class="emphasis">while</b> <br>
+                    <code>
+                        $x = 10; <br>
+                        while($x < 9) { <br>
+                            echo "Entrou no comando while"; <br>
+                        }; <br>
+                    </code>
+
+                </div>
+            </div>
+            <p>
+                Repare que nesta situação somente o comando <b class="emphasis">do while</b> teria um retorno. Pois dentro 
+                do comando <b class="emphasis">while</b> o bloco de código nunca será executado, enquanto $x for menor que 10.
+                Diferentemente do <b class="emphasis">do while</b> que vai executar sempre primeiro o código, independente da condição.
+            </p>
+            <?php
+                /*
+                $x = 10;
+                do {
+                    echo "entrou no bloco";
+                } while ($x < 9);
+    
+                while($x < 9) {
+                    echo "entrou no bloco de codigo while";
+                }
+                */
+            ?>
+            
+        </div>
+
+         <div class="title">
+            <h3>Outros detalhes</h3>
+        </div>
+        <div class="container__content">
+            <p>
+                Assim como no comando while, podemos também utilizar o comando <b class="emphasis">continue</b> e o comando
+                <b class="emphasis">break</b> dentro do loop do while. <br>
+            </p>
+        </div>
+
+        
     </div> <!-- Fim container -->
     
 </body>
