@@ -110,7 +110,7 @@
 
     <div class="container">
         <div class="title">
-            <h1>O que são Loop`s?</h1>
+            <h1>O que são <b class="emphasis">Loop`s?</b></h1>
         </div>
         <div class="container__content">
             <p>
@@ -168,7 +168,7 @@
 
         <div class="title" style="margin-top: 20px;">
             <h1>
-                Como podemos utilizar o laço <b>While</b>.
+                Como podemos utilizar o laço <b class="emphasis">While</b>
             </h1>
         </div>
 
@@ -311,7 +311,7 @@
         </div>
 
         <div class="title">
-            <h1>Como podemos utilizar o laço Do While</h1>
+            <h1>Como podemos utilizar o laço <b class="emphasis">Do While</b></h1>
         </div>
         <div class="container__content">
             <p>
@@ -391,6 +391,99 @@
                 Assim como no comando while, podemos também utilizar o comando <b class="emphasis">continue</b> e o comando
                 <b class="emphasis">break</b> dentro do loop do while. <br>
             </p>
+        </div>
+
+         <div class="title">
+            <h1>Como podemos utilizar o laço <b class="emphasis">For</b></h1>
+        </div>
+        <div class="container__content">
+            <p>
+                Primeiro, começamos pela sintaxe:
+            </p>
+            <div class="div__code__php" style="width: 350px;">
+                <code>
+                    for(variável; condição; incremento) { <br>
+                    }
+                </code>
+            </div>
+            <p>
+                Então esta é a sintaxe. Palavra reservada <b class="emphasis">for</b> seguida de abre e fecha parênteses. <br>
+                Estes parênteses esperam três atributos como parâmetro. Uma <b class="emphasis">variável</b>, uma <b class="emphasis">condição</b> e um 
+                <b class="emphasis">incremento</b>.
+            </p>
+            <p>
+                O primeiro parâmetro é a variável que precisamos iniciar, para auxílio do controle da <b class="emphasis">condição</b> do laço for. 
+                Que por sua vez é o segundo parâmetro. <br>
+                E o terceiro parâmetro é o incremento, ou seja, a <b class="emphasis">lógica</b> que estabelecerá um critério de parada sobre a variável que está sendo usada na condição. 
+            </p>
+            <p>
+                Observando sua sintaxe, o laço For, organiza as três informações necessárias para a criação de uma estrutura de repetição, sem que haja 
+                um looping infinito. Tudo isso, em uma única linha. Sendo que a sequência, a ordem, desses parâmetros é muito importante.
+            </p>
+        </div>
+         <div class="title">
+            <h3>Qual a diferença do laço For, para os demais laços de repetição?</h3>
+        </div>
+        <div class="container__content">
+            <p>
+                Se nos lembramos bem, quando utilizamos os laços while e do while, precisamos criar as variáveis das lógicas de estruturas de repetição,
+                fora do escopo do próprio laço. Mas no caso do <b class="emphasis">for</b>, ele traz isso para dentro do contexto da estrutura de repetição.
+                Ou seja, é possível criar essa variável, sendo o primeiro parâmetro do laço for. <br>
+            </p>
+            <p>
+                Segue exemplo prático:
+            </p>
+            <div class="div__code__php" style="width: 550px; display: grid; grid-template-columns: auto auto;">
+                <div>
+                    <b class="emphasis">Código escrito:</b> <br>
+                    <code>
+                        for($y = 1; $y < 10; $y++) { <br>
+                            echo "$y"; <br>
+                        } <br>
+                    </code>
+                </div>
+                <div>
+                    <b class="emphasis">Saída do código:</b> <br>
+                    <?php 
+                        for ($y = 1; $y <= 10; $y++) { 
+                            echo "A variável y agora vale = $y <br />";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="title">
+            <h3>Outros detalhes</h3>
+        </div>
+        <div class="container__content">
+            <p>
+                Também é possível passar a condição como <b class="emphasis">true</b>, ou omití-la, em sua atribuição. Todavia quando isso é feito, será
+                necessário a criação de uma condição de parada <b class="emphasis">dentro</b> do escopo do laço for. Utilizando o <b class="emphasis">break</b><div class=""></div>.
+            </p>
+            <div class="div__code__php"  style="width: 600px; display: grid; grid-template-columns: auto auto;">
+                <div>
+                    <b class="emphasis">com true:</b> <br>
+                    <code>
+                        for($y = 0; true; $y++) { <br>
+                            if($y >= 20) { <br>
+                                break; <br>
+                            } <br>
+                            echo "$y"; <br>
+                        }
+                    </code>
+                </div>
+                <div>
+                    <b class="emphasis">omitindo:</b> <br>
+                    <code>
+                        for($y = 20; ' ' ; $y--) { <br>
+                            if($y == 0) { <br>
+                                break; <br>
+                            } <br>
+                            echo "$y"; <br>
+                        } <br>
+                    </code>
+                </div>
+            </div>
         </div>
 
         
